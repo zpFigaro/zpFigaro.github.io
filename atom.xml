@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title>figaro&#39;s Blog</title>
-  
+  <title>活出骑士风范</title>
+  <subtitle>figaro&#39;s Blog</subtitle>
   <link href="/atom.xml" rel="self"/>
   
   <link href="www.zgeeker.com/"/>

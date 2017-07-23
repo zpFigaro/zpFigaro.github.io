@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title><![CDATA[“写一篇博客好难”]]></title>
+    <url>%2F2017%2F07%2F23%2F%E2%80%9C%E5%86%99%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2%E5%A5%BD%E9%9A%BE%E2%80%9D%2F</url>
+    <content type="text"><![CDATA[为了能够在这里写blog，我可谓是费了老大的力气了。结果搞清楚了，也就那么一点点事。在这里，把hexo + next +github 搭建博客的过程，我都记录下来，希望对后来者有帮助。 如何搭建一个博客我使用了hexo + next主题 +github page 这样的方式搭建，比我本来的服务器搭建好太多了。速度快了不少，但是图床这些，没有我用群晖的wordpress能够直接使用自己的photoStation方便。 hexo​ 其实用hexo 是最简单的，命令行很少，只是 YML文件配置的时候一定要注意所有的配置必须在“ ：”之后必须有空格。 git和node.js 是必备的。没有的，可以去官网或者命令行下载： 1$ curl https://raw.github.com/creationix/nvm/master/install.sh | sh 1$ nvm install stable ​ 安装hexo 1$ npm install -g hexo-cli ​ hexo的命令行 ​你需要做的步骤是： 1234567891011121314//在你想要放的文件夹里npm install hexo-cli -g//init hexo init blog(自己想要做的blog文件夹)cd blognpm install--- //发布内容 hexo clean //清除缓存hexo g //生成静态页面hexo d //发布页面到网站//其中你可能会用到的hexo s //你可以使用这个，把网站发布到：localhost：4000 查看你的设置 安装主题： 在hexo站点目录下，next ：http://theme-next.iissnan.com/getting-started.html git clone https://github.com/iissnan/hexo-theme-next themes/next 修改Hexo目录下的_config.yml配置文件中的theme属性，将其设置为next。 5.github Page设置 ​ 这个其实很简单，在github上创建一个项目。repo 叫做 yourName.github.io.后面的后缀一定要一致。然后最关键的一步来了，把hexo 部署到github。 ​ 首先。你需要在 网站配置文件 _config.xml里做如下修改： 1234deploy: type: git repo: git@github.com:yourName/yourName.github.io.git branch: master 然后安装一个扩展 $ npm install hexo-deployer-git --save 然后执行： hexo d 坑： 你在repo里的设置，需要你设置好 github 的sshkey 支持。 hexo d 之后 没有反应。你需要检查的就2样。sshkey和config设置里面的每一个 冒号：后面都有一个空格 。我当初就这里浪费了几个小时查找原因。 绑定域名12345$ cd source/$ touch CNAME$ vim CNAME # 输入你的域名$ git add CNAME$ git commit -m &quot;add CNAME&quot; 其实github和你域名注册哪里，dns配置一下就好了 插件根据自己需要的设置就好了，next上就有很多了。 到这里基本就写完了，如果还有什么疑问可以留言。]]></content>
+      <categories>
+        <category>hexo</category>
+      </categories>
+      <tags>
+        <tag>hexo基本使用</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Hello World]]></title>
+    <url>%2F2017%2F07%2F22%2Fhello-world%2F</url>
+    <content type="text"><![CDATA[Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick StartCreate a new post1$ hexo new "My New Post" More info: Writing Run server1$ hexo server More info: Server Generate static files1$ hexo generate More info: Generating Deploy to remote sites1$ hexo deploy More info: Deployment]]></content>
+  </entry>
+</search>
